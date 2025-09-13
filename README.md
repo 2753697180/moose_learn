@@ -62,4 +62,7 @@
   同理，当离散项中仅含有grad_test function时，可采用ADKernelGrad，moose框架会自动完成_grad_test[i]_[qp]的组装，不需要显式声明，    
   对应的计算函数分别是 computeQpResidual precomputeQpResidual precomputeQpResidual（三者计算逻辑是一样的，pre指的是预处理）  
   ### 关于Variable类：
-
+  ### 关于BC类：
+  ### 关于Aux类：
+  ### 关于Post类：
+  ### 关于MultiApp类：
