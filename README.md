@@ -2,14 +2,17 @@
   从moose安装到使用过程中涉及到的问题：
 ## 环境问题
    moose的使用环境为Linux以及MaCOS类unix系统，现只考虑Linux系统，win下的Linux系统有两种，  
-    ##1、wsl##  
-    wsl的下载参考这里
+    **1、wsl**  
+    wsl的下载参考这里 https://learn.microsoft.com/zh-cn/windows/wsl/install  
+    **2、虚拟机**  
+    虚拟机与wsl的Linux发行版都安装Ubuntu就可以（wsl的默认发行版是Ubuntu）  
+    个人推荐使用wsl。
 ## 需要的知识（可忽略）
-   moose中涉及的知识主要为FEM，C++，以及git，
-   ##git##  
-   建议学习一下git的基础命令，方便利用GitHub托管代码，与克隆代码。可以参考这里（https://docs.github.com/zh/github-cli/github-cli/quickstart  
-   建议是在创建mooseapp后（下文会提到）在该app下创建相应的仓库，并将此clone到子目录下。
-   ##C++##
+   moose中涉及的知识主要为FEM，C++，以及git,  
+    **git**   
+    建议学习一下git的基础命令，方便利用GitHub托管代码，与克隆代码。可以参考这里（https://docs.github.com/zh/github-cli/github-cli/quickstart  
+    建议是在创建mooseapp后（下文会提到）在该app下创建相应的仓库，并将此clone到子目录下。   
+    **C++**
 安装好moose后，创建自己的app，随意命名即可，如cat，然后将此库克隆在cat下即可，通过moose创建的app是附带有git的。  
 一个完整的有限元计算流程，涉及到数学方程建模，有限元方式空间离散与时间离散，单元积分与组装方程  
 对于moose对象本身而言，moose框架设立思想是每个类及其子类完成一部分工作，最基础的类是计算框架（如对单元积分，方程组装，编码雅可比矩阵，求解方程等等）  
