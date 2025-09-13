@@ -20,7 +20,8 @@
    FEM的学习，简单的了解FEM的话，可以看一下补充说明中的Kernel类中的网址，想深入学习的话，  
    可以由PDE_ppt开始，可以在这里取得足够多的资料 https://github.com/2753697180/FEM/tree/main/PDE
 ## moose的安装  
-   在下载安装好Linux系统后，可以安装moose了 安装地址 https://mooseframework.inl.gov/moose/getting_started/installation/conda.html，  
+   在下载安装好Linux系统后，可以安装moose了   
+   安装地址 https://mooseframework.inl.gov/moose/getting_started/installation/conda.html
    安装好moose后，创建自己的app，参考这里 https://mooseframework.inl.gov/moose/getting_started/new_users.html  
    随意命名即可，如cat，然后将此库克隆在cat下即可，通过moose创建的app是附带有git的。
 ## moose的内容     
