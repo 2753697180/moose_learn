@@ -9,20 +9,31 @@
     个人推荐使用wsl。
 ## 需要的知识（可忽略）
   ### moose中涉及的知识主要为FEM，C++，以及git,  
-  ### git   
+   **git**   
     建议学习一下git的基础命令，方便利用GitHub托管代码，与克隆代码。可以参考这里（https://docs.github.com/zh/github-cli/github-cli/quickstart  
     建议是在创建mooseapp后（下文会提到）在该app下创建相应的仓库，并将此clone到子目录下。   
-  ### C++
-   C++的学习
-安装好moose后，创建自己的app，随意命名即可，如cat，然后将此库克隆在cat下即可，通过moose创建的app是附带有git的。  
-一个完整的有限元计算流程，涉及到数学方程建模，有限元方式空间离散与时间离散，单元积分与组装方程  
-对于moose对象本身而言，moose框架设立思想是每个类及其子类完成一部分工作，最基础的类是计算框架（如对单元积分，方程组装，编码雅可比矩阵，求解方程等等）  
-这些计算框架内的基本类对象是隐藏的，刚开始了解即可，不必过于深究。（我们要使用的类大概是Kernel类：方程离散项的表述，BC类：边界条件的表述）  
-我们要利用的是类的接口，分为内部接口与外部接口（非编程概念，自己定的）  
-外部接口：就是输入文件，在输入文件中按照方程本身要求解的问题的数学描写，离散后的方程项，在不同的模块中选取合适的类，按照类的使用说明与要解决的问题编辑输入文件，有关输入文件的更多信息，可以查看moose_learb/problems/nub1.i
+   **C++**  
+   C++的学习 可以参考这里 https://www.studycpp.cn/   
+   **FEM**
+    FEM的学习，简单的了解FEM的话，可以看一下补充说明中的Kernel类中的网址，想深入学习的话，   
+    可以由PDE_ppt开始，可以在这里取得足够多的资料 https://github.com/2753697180/FEM/tree/main/PDE
+## moose的安装  
+     在下载安装好Linux系统后，可以安装moose了 安装地址 https://mooseframework.inl.gov/moose/getting_started/installation/conda.html，  
+     安装好moose后，创建自己的app，参考这里https://mooseframework.inl.gov/moose/getting_started/new_users.html 随意命名即可，如cat，
+     然后将此库克隆在cat下即可，通过moose创建的app是附带有git的。
+## moose的内容     
+    在安装并成功运行测试后，可以开始moose的使用了，  
+    一个完整的有限元计算流程，涉及到数学方程建模，有限元方式空间离散与时间离散，单元积分与组装方程  
+    对于moose对象本身而言，moose框架设立思想是每个类及其子类完成一部分工作，最基础的类是计算框架（如对单元积分，方程组装，编码雅可比矩阵，求解方程）  这些计算框架内的基本类对象是隐藏的，刚开始了解即可，不必过于深究。  
+    （我们要使用的类大概是Kernel类：方程离散项的表述，BC类：边界条件的表述，   
+    Variable类：变量类型，也就是trialfunction的选择，决定着Variable的数据结构以及计算精度问题）
+    Postprocessors:一些后处理类，AUX类:辅助变量与内核类，MultiApp类：解耦计算，Transfer类：数据传输的方式。）  
+## 具体使用说明
+    我们要利用的是类的接口，分为内部接口与外部接口（非编程概念，自己定的）  
+    外部接口：就是输入文件，在输入文件中按照方程本身要求解的问题的数学描写，离散后的方程项，在不同的模块中选取合适的类，按照类的使用说明与要解决的问题编辑输入文件，有关输入文件的更多信息，可以查看moose_learb/problems/nub1.i
 （所有类的源文件说明在此查看，https://mooseframework.inl.gov/source/index.html）
 （建议是按模块查看，比如传热，流体等等，模块链接：https://mooseframework.inl.gov/modules/index.html）
-以下是一些补充说明
+## 以下是一些补充说明
 关于Kernel类：
 此文本说明选取对象为稳态导热方程（热力学）也是扩散方程，或者说是拉普拉斯算子，都是一样的数学的形式，      
                           方程形式为div(grad_u)=q（左端是拉普拉斯算子，右端为源项）  
